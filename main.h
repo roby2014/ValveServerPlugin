@@ -1,7 +1,15 @@
 #ifndef MAIN_DLL
 #define MAIN_DLL
 
-#include "headers.h"
+#include <dlfcn.h>
+#include <float.h>
+#include <iostream>
+#include <link.h>
+#include <string.h>
+#include <string>
+#include <sys/mman.h>
+#include <unistd.h>
+#include <vector>
 
 #define FORCEINLINE inline
 
@@ -13,8 +21,7 @@
 
 #define InvalidQueryCvarCookie -1
 
-// CHANGE IT WITH THE VERSION OF YOUR GAME! This is currently for CS:GO.
-#define INTERFACEVERSION_ISERVERPLUGINCALLBACKS				"ISERVERPLUGINCALLBACKS004"
+#define INTERFACEVERSION_ISERVERPLUGINCALLBACKS				"ISERVERPLUGINCALLBACKS002"
 
 enum
 {
@@ -308,7 +315,7 @@ public:
     };
     virtual const char		*GetPluginDescription( void )
     {
-        return "Sample plugin.";
+        return "ValveServerPlugin Blog post roby.";
     };
     virtual void			LevelInit( char const *pMapName )
     {

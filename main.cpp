@@ -49,7 +49,7 @@ bool CSamplePlugin::Load( CreateInterfaceFn interfaceFactory , CreateInterfaceFn
 {
     printf( "Load...\n" );
 
-    auto lm_Server = ( link_map* ) dlopen( "csgo/bin/server.so" , RTLD_NOW );
+    auto lm_Server = ( link_map* ) dlopen( "bin/engine_srv.so" , RTLD_NOW );
 
     if ( lm_Server == nullptr )
     {
